@@ -1,0 +1,170 @@
+-- Merging decision tree log ---
+manifest
+ADDED from C:\Users\naury\AndroidPubSub\AndroidManifest.xml:2:1-22:12
+INJECTED from C:\Users\naury\AndroidPubSub\AndroidManifest.xml:2:1-22:12
+INJECTED from C:\Users\naury\AndroidPubSub\AndroidManifest.xml:2:1-22:12
+MERGED from [com.amazonaws:aws-android-sdk-iot:2.16.3] C:\Users\naury\.gradle\caches\transforms-2\files-2.1\d1276eb446c41c52f6f20dbe64e3e64e\AndroidManifest.xml:1:1-6:12
+MERGED from [com.amazonaws:aws-android-sdk-mobile-client:2.16.3] C:\Users\naury\.gradle\caches\transforms-2\files-2.1\64cd0eb4ee81ffda13cd73b84dc6b38c\AndroidManifest.xml:2:1-9:12
+MERGED from [com.android.support.constraint:constraint-layout:2.0.0-beta3] C:\Users\naury\.gradle\caches\transforms-2\files-2.1\ba341a3230ba66eb0b9458c51df63b87\AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\naury\.gradle\caches\transforms-2\files-2.1\933dd3c79b6b15557d47a9846b38a595\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\naury\.gradle\caches\transforms-2\files-2.1\bdf24412427ee0e2b4367112c64e6c74\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\naury\.gradle\caches\transforms-2\files-2.1\5494014eadc93b5b44509c140425febd\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:28.0.0] C:\Users\naury\.gradle\caches\transforms-2\files-2.1\a63d68c0665c4c7f288faf078247ca8a\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:28.0.0] C:\Users\naury\.gradle\caches\transforms-2\files-2.1\4d1dd49826328ffc79d960205fc0d036\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\naury\.gradle\caches\transforms-2\files-2.1\f57805d5fb05b9afa94c28ba6852e1b8\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:loader:28.0.0] C:\Users\naury\.gradle\caches\transforms-2\files-2.1\ca3a6d47333b179bf9b592980ce37233\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:viewpager:28.0.0] C:\Users\naury\.gradle\caches\transforms-2\files-2.1\5a9c3af01fd935fb53d527d41f62f8a8\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:coordinatorlayout:28.0.0] C:\Users\naury\.gradle\caches\transforms-2\files-2.1\fa2cd04e47e94dd98bd4e27e35d53037\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:drawerlayout:28.0.0] C:\Users\naury\.gradle\caches\transforms-2\files-2.1\862a0631eb5fa97132be3d5eea32bd59\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:slidingpanelayout:28.0.0] C:\Users\naury\.gradle\caches\transforms-2\files-2.1\21e388392a65b48e6a4538f7dcfb63ff\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:customview:28.0.0] C:\Users\naury\.gradle\caches\transforms-2\files-2.1\bd6d72bb80b0cb2c1681778a64095c7f\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] C:\Users\naury\.gradle\caches\transforms-2\files-2.1\b261eac55db5b11a86cd69dcab4b41a5\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] C:\Users\naury\.gradle\caches\transforms-2\files-2.1\fc3de5cb69f0ceccc4aa69e146316017\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\naury\.gradle\caches\transforms-2\files-2.1\e2638bcb285f02391a42496d6b3da82b\AndroidManifest.xml:17:1-24:12
+MERGED from [com.amazonaws:aws-android-sdk-auth-core:2.16.3] C:\Users\naury\.gradle\caches\transforms-2\files-2.1\1131fbdfd9cfd4c1f4151f1611e7ae21\AndroidManifest.xml:2:1-4:80
+MERGED from [org.conscrypt:conscrypt-android:2.0.0] C:\Users\naury\.gradle\caches\transforms-2\files-2.1\015af97e66cd86995333d6ce1ddad829\AndroidManifest.xml:2:1-13:12
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\naury\.gradle\caches\transforms-2\files-2.1\129eb4d48245398bce66a38fbe046272\AndroidManifest.xml:17:1-25:12
+MERGED from [android.arch.lifecycle:runtime:1.1.1] C:\Users\naury\.gradle\caches\transforms-2\files-2.1\0b526e4eab976abef4a4ef3ebd79c08c\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\naury\.gradle\caches\transforms-2\files-2.1\5ae7834b50f2b1672327c7a81cc39274\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\naury\.gradle\caches\transforms-2\files-2.1\eb7ae7cccf3e4b7be2e11476b49b57b3\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\naury\.gradle\caches\transforms-2\files-2.1\7c504755228fd2419a7bacc3987d0c37\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.1] C:\Users\naury\.gradle\caches\transforms-2\files-2.1\9bf1af9ff2887a064bfee657790ea5e2\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:documentfile:28.0.0] C:\Users\naury\.gradle\caches\transforms-2\files-2.1\94d61aff54a54bccfcc6528d4208a164\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\naury\.gradle\caches\transforms-2\files-2.1\93a6cf42e880225ad8173d8cff4f547a\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:print:28.0.0] C:\Users\naury\.gradle\caches\transforms-2\files-2.1\c5b33ed9f70402e505310576daf007c7\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\naury\.gradle\caches\transforms-2\files-2.1\8f2de431dfe2f2aaab8cfbfc957503f9\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:interpolator:28.0.0] C:\Users\naury\.gradle\caches\transforms-2\files-2.1\597197d7de02dc532ddeca35f273e47e\AndroidManifest.xml:17:1-22:12
+INJECTED from C:\Users\naury\AndroidPubSub\AndroidManifest.xml:2:1-22:12
+INJECTED from C:\Users\naury\AndroidPubSub\AndroidManifest.xml:2:1-22:12
+	package
+		ADDED from C:\Users\naury\AndroidPubSub\AndroidManifest.xml:3:5-47
+	android:versionName
+		ADDED from C:\Users\naury\AndroidPubSub\AndroidManifest.xml:5:5-30
+		INJECTED from C:\Users\naury\AndroidPubSub\AndroidManifest.xml
+		INJECTED from C:\Users\naury\AndroidPubSub\AndroidManifest.xml
+	xmlns:android
+		ADDED from C:\Users\naury\AndroidPubSub\AndroidManifest.xml:2:11-69
+	android:versionCode
+		ADDED from C:\Users\naury\AndroidPubSub\AndroidManifest.xml:4:5-28
+		INJECTED from C:\Users\naury\AndroidPubSub\AndroidManifest.xml
+		INJECTED from C:\Users\naury\AndroidPubSub\AndroidManifest.xml
+uses-permission#android.permission.INTERNET
+ADDED from C:\Users\naury\AndroidPubSub\AndroidManifest.xml:7:5-67
+MERGED from [com.amazonaws:aws-android-sdk-iot:2.16.3] C:\Users\naury\.gradle\caches\transforms-2\files-2.1\d1276eb446c41c52f6f20dbe64e3e64e\AndroidManifest.xml:5:5-66
+MERGED from [com.amazonaws:aws-android-sdk-iot:2.16.3] C:\Users\naury\.gradle\caches\transforms-2\files-2.1\d1276eb446c41c52f6f20dbe64e3e64e\AndroidManifest.xml:5:5-66
+MERGED from [com.amazonaws:aws-android-sdk-mobile-client:2.16.3] C:\Users\naury\.gradle\caches\transforms-2\files-2.1\64cd0eb4ee81ffda13cd73b84dc6b38c\AndroidManifest.xml:6:5-66
+MERGED from [com.amazonaws:aws-android-sdk-mobile-client:2.16.3] C:\Users\naury\.gradle\caches\transforms-2\files-2.1\64cd0eb4ee81ffda13cd73b84dc6b38c\AndroidManifest.xml:6:5-66
+	android:name
+		ADDED from C:\Users\naury\AndroidPubSub\AndroidManifest.xml:7:22-64
+application
+ADDED from C:\Users\naury\AndroidPubSub\AndroidManifest.xml:9:5-20:19
+MERGED from [com.android.support.constraint:constraint-layout:2.0.0-beta3] C:\Users\naury\.gradle\caches\transforms-2\files-2.1\ba341a3230ba66eb0b9458c51df63b87\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:2.0.0-beta3] C:\Users\naury\.gradle\caches\transforms-2\files-2.1\ba341a3230ba66eb0b9458c51df63b87\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\naury\.gradle\caches\transforms-2\files-2.1\e2638bcb285f02391a42496d6b3da82b\AndroidManifest.xml:22:5-94
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\naury\.gradle\caches\transforms-2\files-2.1\e2638bcb285f02391a42496d6b3da82b\AndroidManifest.xml:22:5-94
+MERGED from [org.conscrypt:conscrypt-android:2.0.0] C:\Users\naury\.gradle\caches\transforms-2\files-2.1\015af97e66cd86995333d6ce1ddad829\AndroidManifest.xml:11:5-20
+MERGED from [org.conscrypt:conscrypt-android:2.0.0] C:\Users\naury\.gradle\caches\transforms-2\files-2.1\015af97e66cd86995333d6ce1ddad829\AndroidManifest.xml:11:5-20
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\naury\.gradle\caches\transforms-2\files-2.1\129eb4d48245398bce66a38fbe046272\AndroidManifest.xml:22:5-23:19
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\naury\.gradle\caches\transforms-2\files-2.1\129eb4d48245398bce66a38fbe046272\AndroidManifest.xml:22:5-23:19
+	android:appComponentFactory
+		ADDED from [com.android.support:support-compat:28.0.0] C:\Users\naury\.gradle\caches\transforms-2\files-2.1\e2638bcb285f02391a42496d6b3da82b\AndroidManifest.xml:22:18-91
+	android:label
+		ADDED from C:\Users\naury\AndroidPubSub\AndroidManifest.xml:12:9-41
+	android:icon
+		ADDED from C:\Users\naury\AndroidPubSub\AndroidManifest.xml:11:9-45
+	android:allowBackup
+		ADDED from C:\Users\naury\AndroidPubSub\AndroidManifest.xml:10:9-35
+activity#com.amazonaws.demo.androidpubsub.PubSubActivity
+ADDED from C:\Users\naury\AndroidPubSub\AndroidManifest.xml:13:9-19:20
+	android:name
+		ADDED from C:\Users\naury\AndroidPubSub\AndroidManifest.xml:13:19-49
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from C:\Users\naury\AndroidPubSub\AndroidManifest.xml:14:13-18:29
+action#android.intent.action.MAIN
+ADDED from C:\Users\naury\AndroidPubSub\AndroidManifest.xml:15:17-69
+	android:name
+		ADDED from C:\Users\naury\AndroidPubSub\AndroidManifest.xml:15:25-66
+category#android.intent.category.LAUNCHER
+ADDED from C:\Users\naury\AndroidPubSub\AndroidManifest.xml:17:17-77
+	android:name
+		ADDED from C:\Users\naury\AndroidPubSub\AndroidManifest.xml:17:27-74
+uses-sdk
+INJECTED from C:\Users\naury\AndroidPubSub\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\naury\AndroidPubSub\AndroidManifest.xml
+INJECTED from C:\Users\naury\AndroidPubSub\AndroidManifest.xml
+MERGED from [com.amazonaws:aws-android-sdk-iot:2.16.3] C:\Users\naury\.gradle\caches\transforms-2\files-2.1\d1276eb446c41c52f6f20dbe64e3e64e\AndroidManifest.xml:3:5-73
+MERGED from [com.amazonaws:aws-android-sdk-iot:2.16.3] C:\Users\naury\.gradle\caches\transforms-2\files-2.1\d1276eb446c41c52f6f20dbe64e3e64e\AndroidManifest.xml:3:5-73
+MERGED from [com.amazonaws:aws-android-sdk-mobile-client:2.16.3] C:\Users\naury\.gradle\caches\transforms-2\files-2.1\64cd0eb4ee81ffda13cd73b84dc6b38c\AndroidManifest.xml:4:5-73
+MERGED from [com.amazonaws:aws-android-sdk-mobile-client:2.16.3] C:\Users\naury\.gradle\caches\transforms-2\files-2.1\64cd0eb4ee81ffda13cd73b84dc6b38c\AndroidManifest.xml:4:5-73
+MERGED from [com.android.support.constraint:constraint-layout:2.0.0-beta3] C:\Users\naury\.gradle\caches\transforms-2\files-2.1\ba341a3230ba66eb0b9458c51df63b87\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:2.0.0-beta3] C:\Users\naury\.gradle\caches\transforms-2\files-2.1\ba341a3230ba66eb0b9458c51df63b87\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\naury\.gradle\caches\transforms-2\files-2.1\933dd3c79b6b15557d47a9846b38a595\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\naury\.gradle\caches\transforms-2\files-2.1\933dd3c79b6b15557d47a9846b38a595\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\naury\.gradle\caches\transforms-2\files-2.1\bdf24412427ee0e2b4367112c64e6c74\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\naury\.gradle\caches\transforms-2\files-2.1\bdf24412427ee0e2b4367112c64e6c74\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\naury\.gradle\caches\transforms-2\files-2.1\5494014eadc93b5b44509c140425febd\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\naury\.gradle\caches\transforms-2\files-2.1\5494014eadc93b5b44509c140425febd\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:28.0.0] C:\Users\naury\.gradle\caches\transforms-2\files-2.1\a63d68c0665c4c7f288faf078247ca8a\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:28.0.0] C:\Users\naury\.gradle\caches\transforms-2\files-2.1\a63d68c0665c4c7f288faf078247ca8a\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:28.0.0] C:\Users\naury\.gradle\caches\transforms-2\files-2.1\4d1dd49826328ffc79d960205fc0d036\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:28.0.0] C:\Users\naury\.gradle\caches\transforms-2\files-2.1\4d1dd49826328ffc79d960205fc0d036\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\naury\.gradle\caches\transforms-2\files-2.1\f57805d5fb05b9afa94c28ba6852e1b8\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\naury\.gradle\caches\transforms-2\files-2.1\f57805d5fb05b9afa94c28ba6852e1b8\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:loader:28.0.0] C:\Users\naury\.gradle\caches\transforms-2\files-2.1\ca3a6d47333b179bf9b592980ce37233\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:loader:28.0.0] C:\Users\naury\.gradle\caches\transforms-2\files-2.1\ca3a6d47333b179bf9b592980ce37233\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:viewpager:28.0.0] C:\Users\naury\.gradle\caches\transforms-2\files-2.1\5a9c3af01fd935fb53d527d41f62f8a8\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:viewpager:28.0.0] C:\Users\naury\.gradle\caches\transforms-2\files-2.1\5a9c3af01fd935fb53d527d41f62f8a8\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:coordinatorlayout:28.0.0] C:\Users\naury\.gradle\caches\transforms-2\files-2.1\fa2cd04e47e94dd98bd4e27e35d53037\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:coordinatorlayout:28.0.0] C:\Users\naury\.gradle\caches\transforms-2\files-2.1\fa2cd04e47e94dd98bd4e27e35d53037\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:drawerlayout:28.0.0] C:\Users\naury\.gradle\caches\transforms-2\files-2.1\862a0631eb5fa97132be3d5eea32bd59\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:drawerlayout:28.0.0] C:\Users\naury\.gradle\caches\transforms-2\files-2.1\862a0631eb5fa97132be3d5eea32bd59\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:slidingpanelayout:28.0.0] C:\Users\naury\.gradle\caches\transforms-2\files-2.1\21e388392a65b48e6a4538f7dcfb63ff\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:slidingpanelayout:28.0.0] C:\Users\naury\.gradle\caches\transforms-2\files-2.1\21e388392a65b48e6a4538f7dcfb63ff\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:customview:28.0.0] C:\Users\naury\.gradle\caches\transforms-2\files-2.1\bd6d72bb80b0cb2c1681778a64095c7f\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:customview:28.0.0] C:\Users\naury\.gradle\caches\transforms-2\files-2.1\bd6d72bb80b0cb2c1681778a64095c7f\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] C:\Users\naury\.gradle\caches\transforms-2\files-2.1\b261eac55db5b11a86cd69dcab4b41a5\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] C:\Users\naury\.gradle\caches\transforms-2\files-2.1\b261eac55db5b11a86cd69dcab4b41a5\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] C:\Users\naury\.gradle\caches\transforms-2\files-2.1\fc3de5cb69f0ceccc4aa69e146316017\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] C:\Users\naury\.gradle\caches\transforms-2\files-2.1\fc3de5cb69f0ceccc4aa69e146316017\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\naury\.gradle\caches\transforms-2\files-2.1\e2638bcb285f02391a42496d6b3da82b\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\naury\.gradle\caches\transforms-2\files-2.1\e2638bcb285f02391a42496d6b3da82b\AndroidManifest.xml:20:5-44
+MERGED from [com.amazonaws:aws-android-sdk-auth-core:2.16.3] C:\Users\naury\.gradle\caches\transforms-2\files-2.1\1131fbdfd9cfd4c1f4151f1611e7ae21\AndroidManifest.xml:4:1-69
+MERGED from [com.amazonaws:aws-android-sdk-auth-core:2.16.3] C:\Users\naury\.gradle\caches\transforms-2\files-2.1\1131fbdfd9cfd4c1f4151f1611e7ae21\AndroidManifest.xml:4:1-69
+MERGED from [org.conscrypt:conscrypt-android:2.0.0] C:\Users\naury\.gradle\caches\transforms-2\files-2.1\015af97e66cd86995333d6ce1ddad829\AndroidManifest.xml:7:5-9:41
+MERGED from [org.conscrypt:conscrypt-android:2.0.0] C:\Users\naury\.gradle\caches\transforms-2\files-2.1\015af97e66cd86995333d6ce1ddad829\AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\naury\.gradle\caches\transforms-2\files-2.1\129eb4d48245398bce66a38fbe046272\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\naury\.gradle\caches\transforms-2\files-2.1\129eb4d48245398bce66a38fbe046272\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.1] C:\Users\naury\.gradle\caches\transforms-2\files-2.1\0b526e4eab976abef4a4ef3ebd79c08c\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.1] C:\Users\naury\.gradle\caches\transforms-2\files-2.1\0b526e4eab976abef4a4ef3ebd79c08c\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\naury\.gradle\caches\transforms-2\files-2.1\5ae7834b50f2b1672327c7a81cc39274\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\naury\.gradle\caches\transforms-2\files-2.1\5ae7834b50f2b1672327c7a81cc39274\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\naury\.gradle\caches\transforms-2\files-2.1\eb7ae7cccf3e4b7be2e11476b49b57b3\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\naury\.gradle\caches\transforms-2\files-2.1\eb7ae7cccf3e4b7be2e11476b49b57b3\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\naury\.gradle\caches\transforms-2\files-2.1\7c504755228fd2419a7bacc3987d0c37\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\naury\.gradle\caches\transforms-2\files-2.1\7c504755228fd2419a7bacc3987d0c37\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.1] C:\Users\naury\.gradle\caches\transforms-2\files-2.1\9bf1af9ff2887a064bfee657790ea5e2\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.1] C:\Users\naury\.gradle\caches\transforms-2\files-2.1\9bf1af9ff2887a064bfee657790ea5e2\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:documentfile:28.0.0] C:\Users\naury\.gradle\caches\transforms-2\files-2.1\94d61aff54a54bccfcc6528d4208a164\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:documentfile:28.0.0] C:\Users\naury\.gradle\caches\transforms-2\files-2.1\94d61aff54a54bccfcc6528d4208a164\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\naury\.gradle\caches\transforms-2\files-2.1\93a6cf42e880225ad8173d8cff4f547a\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\naury\.gradle\caches\transforms-2\files-2.1\93a6cf42e880225ad8173d8cff4f547a\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:print:28.0.0] C:\Users\naury\.gradle\caches\transforms-2\files-2.1\c5b33ed9f70402e505310576daf007c7\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:print:28.0.0] C:\Users\naury\.gradle\caches\transforms-2\files-2.1\c5b33ed9f70402e505310576daf007c7\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\naury\.gradle\caches\transforms-2\files-2.1\8f2de431dfe2f2aaab8cfbfc957503f9\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\naury\.gradle\caches\transforms-2\files-2.1\8f2de431dfe2f2aaab8cfbfc957503f9\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:interpolator:28.0.0] C:\Users\naury\.gradle\caches\transforms-2\files-2.1\597197d7de02dc532ddeca35f273e47e\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:interpolator:28.0.0] C:\Users\naury\.gradle\caches\transforms-2\files-2.1\597197d7de02dc532ddeca35f273e47e\AndroidManifest.xml:20:5-44
+INJECTED from C:\Users\naury\AndroidPubSub\AndroidManifest.xml
+INJECTED from C:\Users\naury\AndroidPubSub\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from C:\Users\naury\AndroidPubSub\AndroidManifest.xml
+		ADDED from C:\Users\naury\AndroidPubSub\AndroidManifest.xml
+		INJECTED from C:\Users\naury\AndroidPubSub\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from C:\Users\naury\AndroidPubSub\AndroidManifest.xml
+		ADDED from C:\Users\naury\AndroidPubSub\AndroidManifest.xml
+		INJECTED from C:\Users\naury\AndroidPubSub\AndroidManifest.xml
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from [com.amazonaws:aws-android-sdk-mobile-client:2.16.3] C:\Users\naury\.gradle\caches\transforms-2\files-2.1\64cd0eb4ee81ffda13cd73b84dc6b38c\AndroidManifest.xml:7:5-78
+	android:name
+		ADDED from [com.amazonaws:aws-android-sdk-mobile-client:2.16.3] C:\Users\naury\.gradle\caches\transforms-2\files-2.1\64cd0eb4ee81ffda13cd73b84dc6b38c\AndroidManifest.xml:7:22-76
