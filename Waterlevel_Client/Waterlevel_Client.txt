@@ -37,10 +37,10 @@ extern "C" {
 //AWS IOT config, change these:
 char wifi_ssid[]       = "Note5";
 char wifi_password[]   = "00000000";
-char aws_endpoint[]    = "a1rgc1vd3jykuy-ats.iot.ap-northeast-2.amazonaws.com";
-char aws_key[]         = "AKIA26AIO27UTBS22QMC";
-char aws_secret[]      = "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";
-char aws_region[]      = "ap-northeast-2";
+char aws_endpoint[]    = "";
+char aws_key[]         = "";
+char aws_secret[]      = "";
+char aws_region[]      = "";
 const char* aws_topic  = "$aws/things/Waterlevel/shadow/update";
 
 int port = 8883; 
