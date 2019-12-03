@@ -1,0 +1,68 @@
+import json
+import bson
+import pymongo
+import os
+import requests
+import boto3
+
+def lambda_handler(event, context):
+    eventText=json.dumps(event)
+    connection=pymongo.MongoClient("mongodb+srv://FishIoT:fishiottest@cluster0-p9glb.mongodb.net/test?retryWrites=true&w=majority",27017)
+    db=connection.FishIoTDB
+    coll =db.fishiotc
+    savePHData =json.loads(eventText)
+    coll.insert_one(savePHData)
+ //db연결 PH센서
+
+
+import json
+import bson
+import pymongo
+import os
+import requests
+import boto3
+
+def lambda_handler(event, context):
+    eventText=json.dumps(event)
+    connection=pymongo.MongoClient("mongodb+srv://FishIoT:fishiottest@cluster0-p9glb.mongodb.net/test?retryWrites=true&w=majority",27017)
+    db=connection.FishIoTDB
+    coll =db.FishIoTMotor
+    saveData =json.loads(eventText)
+    coll.insert_one(saveData)
+
+//db연결 모터센서
+
+
+
+import json
+import bson
+import pymongo
+import os
+import requests
+import boto3
+
+def lambda_handler(event, context):
+    eventText=json.dumps(event)
+    connection=pymongo.MongoClient("mongodb+srv://FishIoT:fishiottest@cluster0-p9glb.mongodb.net/test?retryWrites=true&w=majority",27017)
+    db=connection.FishIoTDB
+    coll =db.FishIoTWaterlevel
+    saveData =json.loads(eventText)
+    coll.insert_one(saveData)
+//db연결 수위센서
+
+
+import json
+import bson
+import pymongo
+import os
+import requests
+import boto3
+
+def lambda_handler(event, context):
+    eventText=json.dumps(event)
+    connection=pymongo.MongoClient("mongodb+srv://FishIoT:fishiottest@cluster0-p9glb.mongodb.net/test?retryWrites=true&w=majority",27017)
+    db=connection.FishIoTDB
+    coll =db.FishIoTTemperature
+    saveData =json.loads(eventText)
+    coll.insert_one(saveData)
+//db연결 수온센서

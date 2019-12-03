@@ -1,0 +1,188 @@
+
+#include <ESP8266WiFi.h>
+#include <PubSubClient.h>
+#include <time.h>
+#include <ArduinoJson.h>
+
+const char *ssid = "myhome";  // 와이파이 이름
+const char *pass = "65679295";      // 와이파이 비밀번호
+const char *thingId = "PH-Sensor1";          // 사물 이름 (thing ID) 
+const char *host = "a1rgc1vd3jykuy-ats.iot.ap-northeast-2.amazonaws.com"; // AWS IoT Core 주소
+
+// 사물 인증서 (파일 이름: xxxxxxxxxx-certificate.pem.crt)
+const char cert_str[] PROGMEM = R"EOF(
+
+)EOF";
+// 사물 인증서 프라이빗 키 (파일 이름: xxxxxxxxxx-private.pem.key)
+const char key_str[] PROGMEM = R"EOF(
+
+)EOF";
+// Amazon Trust Services(ATS) 엔드포인트 CA 인증서 (서버인증 > "RSA 2048비트 키: Amazon Root CA 1" 다운로드)
+const char ca_str[] PROGMEM = R"EOF(
+
+)EOF";
+
+void callback(char* topic, byte* payload, unsigned int length) {
+  Serial.print("Message arrived [");
+  Serial.print(topic);
+  Serial.print("] ");
+  for (int i = 0; i < length; i++) {
+    Serial.print((char)payload[i]);
+  }
+  Serial.println();
+
+}
+
+X509List ca(ca_str);
+X509List cert(cert_str);
+PrivateKey key(key_str);
+WiFiClientSecure wifiClient;
+PubSubClient client(host, 8883, callback, wifiClient); //set  MQTT port number to 8883 as per //standard
+
+void reconnect() {
+  // Loop until we're reconnected
+  while (!client.connected()) {
+    Serial.print("Attempting MQTT connection...");
+    // Attempt to connect
+    if (client.connect(thingId)) {
+      Serial.println("connected");
+      // Once connected, publish an announcement...
+      client.publish("outTopic", "hello world");
+      // ... and resubscribe
+      client.subscribe("inTopic");
+    } else {
+      Serial.print("failed, rc=");
+      Serial.print(client.state());
+      Serial.println(" try again in 5 seconds");
+
+      char buf[256];
+      wifiClient.getLastSSLError(buf,256);
+      Serial.print("WiFiClientSecure SSL error: ");
+      Serial.println(buf);
+
+      // Wait 5 seconds before retrying
+      delay(5000);
+    }
+  }
+}
+
+// Set time via NTP, as required for x.509 validation
+void setClock() {
+  configTime(9 * 3600, 0, "pool.ntp.org", "time.nist.gov");//한국시간 가져오기
+
+  Serial.print("Waiting for NTP time sync: ");
+  time_t now = time(nullptr);
+  while (now < 8 * 3600 * 2) {
+    delay(500);
+    Serial.print(".");
+    now = time(nullptr);
+  }
+  Serial.println("");
+  struct tm timeinfo;
+  gmtime_r(&now, &timeinfo);
+  Serial.print("Current time: ");
+  Serial.print(asctime(&timeinfo));
+}
+
+String getTextTime(time_t now)
+{
+struct tm * timeinfo;
+timeinfo = localtime(&now);
+// Serial.println(timeinfo->tm_hour);
+// Serial.println(timeinfo->tm_min);
+// Serial.println(timeinfo->tm_wday);
+String text = String(timeinfo->tm_hour)+String(timeinfo->tm_min)+String(timeinfo->tm_wday);
+Serial.println(text);
+}
+void setup() {
+  Serial.begin(115200);//통신속도 설정
+  Serial.setDebugOutput(true);
+  Serial.println();
+  Serial.println();
+
+  // We start by connecting to a WiFi network
+  Serial.print("Connecting to ");
+  Serial.println(ssid);
+  WiFi.mode(WIFI_STA);
+  WiFi.begin(ssid, pass);//와이파이 연결
+  
+  while (WiFi.status() != WL_CONNECTED) {// 와이파이 연결에 실패했을시
+    delay(500);
+    Serial.print(".");
+  }
+  Serial.println("");
+
+  Serial.println("WiFi connected");
+  Serial.println("IP address: ");
+  Serial.println(WiFi.localIP());//연결된 와이파이 내용 출력
+
+  wifiClient.setTrustAnchors(&ca);
+  wifiClient.setClientRSACert(&cert, &key);
+  Serial.println("Certifications and key are set");
+
+  setClock();
+  //client.setServer(host, 8883);
+  client.setCallback(callback);
+}
+
+long lastMsg = 0;
+char msg[200];
+int value = 0;
+void loop() {
+  int i=0;
+  if (!client.connected()) { 
+    
+    reconnect();
+  }
+  
+  client.loop();
+  
+  int senser_value=0,PHbuf[10],PHTemp;
+
+  for(int i=0;i<10;i++)
+  {
+    PHbuf[i]=analogRead(A0);
+    delay(30);
+  }
+  for(int i=0;i<9;i++)
+  {
+    for(int j=i;j<10;j++)
+    {
+      if(PHbuf[i]>PHbuf[j]);
+      {
+        PHTemp=PHbuf[i];
+        PHbuf[i]=PHbuf[j];
+        PHbuf[j]=PHTemp;
+      }
+    }
+  }
+  for (int i=2;i<8;i++)
+  {
+    senser_value+=PHbuf[i];
+  }
+  senser_value/=6;
+  float PHFvelue;
+  PHFvelue=3.5*senser_value*5/1024-0.09;
+  String Temp= String(PHFvelue);
+  Serial.println(senser_value);
+  Temp +=" ";
+  
+  time_t now = time(nullptr); 
+  Temp += ctime(&now);
+  
+  DynamicJsonDocument jsonBuffer;
+  JsonObject root = jsonBuffer.to<JsonObject>();
+  JsonObject state = root.createNestedObject("state");
+  JsonObject state_reported = state.createNestedObject("reported");
+  state_reported["value"] = Temp;
+ 
+  char shadow[measureJson(root) + 1];
+  serializeJson(root, shadow, sizeof(shadow));
+
+  Serial.print(Temp);
+  ++value;
+  client.publish("$aws/things/PH-Sensor/shadow/update", shadow);//outTopic aws서버로 보내는것. outTopic
+  Serial.print("Heap: "); Serial.println(ESP.getFreeHeap()); //Low heap can cause problems
+
+  delay(10000-300);
+}수질센서

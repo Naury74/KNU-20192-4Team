@@ -1,0 +1,239 @@
+
+#include <ESP8266WiFi.h>
+#include <PubSubClient.h>
+#include <time.h>
+#include <ArduinoJson.h>
+#include <Servo.h> 
+
+
+const char *ssid = "myhome";  // 와이파이 이름
+const char *pass = "65679295";      // 와이파이 비밀번호
+const char *thingId = "Camera-Sensor";          // 사물 이름 (thing ID) 
+const char *host = "a1rgc1vd3jykuy-ats.iot.ap-northeast-2.amazonaws.com"; // AWS IoT Core 주소
+time_t lastFeedTime;
+time_t now;
+//서보모터 선언
+Servo myservo; 
+//서보모터 핀 선언
+int servoPin = 12;
+void callback(char* topic, byte* payload, unsigned int length);
+
+
+// 사물 인증서 (파일 이름: xxxxxxxxxx-certificate.pem.crt)
+const char cert_str[] PROGMEM = R"EOF(
+
+
+)EOF";
+// 사물 인증서 프라이빗 키 (파일 이름: xxxxxxxxxx-private.pem.key)
+const char key_str[] PROGMEM = R"EOF(
+
+
+)EOF";
+// Amazon Trust Services(ATS) 엔드포인트 CA 인증서 (서버인증 > "RSA 2048비트 키: Amazon Root CA 1" 다운로드)
+const char ca_str[] PROGMEM = R"EOF(
+
+)EOF";
+
+
+
+X509List ca(ca_str);
+X509List cert(cert_str);
+PrivateKey key(key_str);
+WiFiClientSecure wifiClient;
+PubSubClient client(host, 8883, callback, wifiClient); //set  MQTT port number to 8883 as per //standard
+
+//mqtt재연결 하는 함수
+void reconnect() {
+  // Loop until we're reconnected
+  while (!client.connected()) {
+    Serial.print("Attempting MQTT connection...");
+    // Attempt to connect
+    if (client.connect(thingId)) {
+      Serial.println("connected");
+      
+      // ... and resubscribe
+      client.subscribe("$aws/things/Camera-Sensor/shadow/update");
+      
+    } else {
+      Serial.print("failed, rc=");
+      Serial.print(client.state());
+      Serial.println(" try again in 5 seconds");
+      char buf[256];
+      wifiClient.getLastSSLError(buf,256);
+      Serial.print("WiFiClientSecure SSL error: ");
+      Serial.println(buf);
+
+      // Wait 5 seconds before retrying
+      delay(5000);
+    }
+  }
+}
+
+//한국시간으로 셋팅하는 함수
+// Set time via NTP, as required for x.509 validation
+void setClock() {
+  configTime(9 * 3600, 0, "pool.ntp.org", "time.nist.gov");//한국시간 가져오기
+
+  Serial.print("Waiting for NTP time sync: ");
+  now = time(nullptr);
+  while (now < 8 * 3600 * 2) {
+    delay(500);
+    Serial.print(".");
+    now = time(nullptr);
+  }
+  Serial.println("");
+  struct tm timeinfo;
+  gmtime_r(&now, &timeinfo);
+  Serial.print("Current time: ");
+  Serial.print(asctime(&timeinfo));
+}
+
+//setclock의 시간을 가져와서 문자열로 반환해주는 함수
+String getTextTime(time_t now)
+{
+struct tm * timeinfo;
+timeinfo = localtime(&now);
+// Serial.println(timeinfo->tm_hour);
+// Serial.println(timeinfo->tm_min);
+// Serial.println(timeinfo->tm_wday);
+String Text =String(timeinfo->tm_hour)+"시 "+String(timeinfo->tm_min)+"분 "+String(timeinfo->tm_sec)+"초";
+return Text;
+}
+
+
+
+void setup() {
+  
+  Serial.begin(115200);//통신속도 설정
+  Serial.setDebugOutput(true);
+  Serial.println();
+  Serial.println();
+ 
+  // We start by connecting to a WiFi network
+  //와이파이 연결 시도 및 와이파이 연결 확인부분
+  Serial.print("Connecting to ");
+  Serial.println(ssid);
+  WiFi.mode(WIFI_STA);
+  WiFi.begin(ssid, pass);
+  while (WiFi.status() != WL_CONNECTED) {// 와이파이 연결에 실패했을시
+    delay(500);
+    Serial.print(".");
+  }
+  Serial.println("");
+  Serial.println("WiFi connected");
+  Serial.println("IP address: ");
+  Serial.println(WiFi.localIP());//연결된 와이파이 내용 출력
+
+  wifiClient.setTrustAnchors(&ca);
+  wifiClient.setClientRSACert(&cert, &key);
+  Serial.println("Certifications and key are set");
+
+  setClock();
+  //client.setServer(host, 8883);
+  client.setCallback(callback);
+  //와이파이 연결 확인 끝
+  
+  //서보모터의 핀 연결 부분
+  myservo.attach(servoPin);
+  now = time(nullptr); 
+  lastFeedTime=now;
+}
+
+
+//long lastMsg = 0;
+//char msg[200];
+//int value = 0;
+void loop() {
+  if (!client.connected()) {   
+    reconnect();
+  }
+  client.loop();
+  
+  double nowTime;//현재시간- 밥준시간 
+  int timeGap=3000;//자동 급여 시간 1당 1초
+  
+  now = time(nullptr); 
+  
+  nowTime=difftime(now,lastFeedTime);
+  Serial.print("nowtime=");
+  Serial.println(nowTime);
+  Serial.println();
+  if (nowTime-(double)timeGap>=0)
+  {
+    for(int i = 0; i < 180; i += 1) 
+    { 
+      myservo.write(i); 
+      delay(15); //delay값을 조정하여 모터의 속도를 컨터롤가능
+    } 
+    delay(2000);
+    for(int i = 180; i>=1; i-=1)
+    { 
+      myservo.write(i); 
+      delay(15); 
+    }
+
+    String time_tTemp="off";
+    
+    DynamicJsonDocument jsonBuffer;
+    JsonObject root = jsonBuffer.to<JsonObject>();
+    JsonObject state = root.createNestedObject("state");
+    JsonObject state_reported = state.createNestedObject("reported");
+    JsonObject state_desired = state.createNestedObject("desired");
+    state_reported["value"] = time_tTemp;
+    state_desired["motor"]=0;
+ 
+    char shadow[measureJson(root) + 1];
+    serializeJson(root, shadow, sizeof(shadow));
+  
+    Serial.println(String (shadow));
+    client.publish("$aws/things/Camera-Sensor/shadow/update", shadow);//outTopic aws서버로 보내는것. outTopic
+    Serial.print("Heap: "); Serial.println(ESP.getFreeHeap()); //Low heap can cause problems
+    Serial.print("lastFeedTime=");
+    Serial.println(lastFeedTime);
+    lastFeedTime= time(nullptr);   
+  }
+  delay(2000);//시간당 업데이트 확인 몇번하는지 1000당 1초
+}
+
+//토픽이 들어왔을때 반응 함수 topic=토픽 이름 
+void callback(char* topic, byte* payload, unsigned int length) {
+  String shadow="";
+  for (int i = 0; i < length; i++) {
+      shadow+=((char)payload[i]);
+  }
+  Serial.println(shadow);
+  if (shadow.indexOf("1")!= -1)
+  {
+    for(int i = 0; i < 180; i += 1) 
+    { 
+      myservo.write(i);
+      delay(15); //delay값을 조정하여 모터의 속도를 컨터롤가능
+    } 
+    delay(2000);
+    for(int i = 180; i>=1; i-=1)
+    { 
+      myservo.write(i); 
+      delay(15); 
+    }
+
+    String Temp="off";
+    now = time(nullptr);
+    lastFeedTime= time(nullptr);   
+    Serial.println("callback"); 
+    Serial.println(now);
+    DynamicJsonDocument jsonBuffer;
+    JsonObject root = jsonBuffer.to<JsonObject>();
+    JsonObject state = root.createNestedObject("state");
+    JsonObject state_reported = state.createNestedObject("reported");
+    JsonObject state_desired = state.createNestedObject("desired");
+    state_reported["value"] = Temp;
+    state_desired["motor"]="0";
+    char shadow[measureJson(root) + 1];
+    serializeJson(root, shadow, sizeof(shadow));
+    
+    Serial.println(String (shadow));
+    client.publish("$aws/things/Camera-Sensor/shadow/update", shadow);//outTopic aws서버로 보내는것. outTopic
+    Serial.print("Heap: "); Serial.println(ESP.getFreeHeap()); //Low heap can cause problems
+   }
+}
+//모터 코드
